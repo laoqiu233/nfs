@@ -12,10 +12,10 @@ clean:
 
 mnt:
 	sudo insmod networkfs.ko
-	# sudo mount -t networkfs token /mnt/nfs
+	sudo mount -t networkfs token /mnt/nfs
 
 umnt:
-	# sudo umount /mnt/nfs
+	sudo umount /mnt/nfs
 	sudo rmmod networkfs
 
 reload: umnt clean all mnt

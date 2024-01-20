@@ -1,12 +1,12 @@
 #include "http.h"
 
-#include <linux/net.h>
 #include <linux/inet.h>
 
 const char *HTTP_REQUEST_LINE = "GET /";
 const char *HTTP_REQUEST_HEADERS =
     " HTTP/1.1\r\nHost:localhost\r\nConnection: close\r\n\r\n";
-const char *SERVER_IP = "172.17.48.1";
+// todo CHANGE SERVER IP FOR UR SYSTEM
+const char *SERVER_IP = "172.28.22.199";
 const int SERVER_PORT = 8000;
 const char *HTTP_LENGTH_HEADER = "content-length: ";
 
@@ -110,11 +110,6 @@ int64_t parse_http_response(char *raw_response, size_t raw_response_size,
     return -EHTTPMALFORMED;
   }
 
-  if (length < sizeof(int64_t)) {
-      pr_info("PIZDA");
-    return -EPROTMALFORMED;
-  }
-
   if (length > response_size) {
     return -ENOSPC;
   }
@@ -146,6 +141,7 @@ int64_t networkfs_http_call(const char *method,
                          sizeof(struct sockaddr_in), 0);
   if (error != 0) {
     sock_release(sock);
+    printk(KERN_INFO "Failed to connect status: %d", error);
     return -ESOCKNOCONNECT;
   }
 

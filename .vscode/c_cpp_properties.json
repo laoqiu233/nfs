@@ -6,8 +6,8 @@
                 "${workspaceFolder}/**",
                 "/usr/include",
                 "/usr/local/include",
-                "/usr/src/linux-headers-6.2.0-39-generic/include",
-                "/usr/src/linux-headers-6.2.0-39-generic/arch/x86/include"
+                "/usr/src/linux-headers-5.15.0-91-generic/include",
+                "/usr/src/linux-headers-5.15.0-91-generic/arch/x86/include"
             ],
             "defines": [
                 "__GNUC__",
