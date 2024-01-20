@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "*.css": "tailwindcss",
+        "*.sql": "sql",
+        "module.h": "c",
+        "kernel.h": "c",
+        "sysinfo.h": "c",
+        "const.h": "c",
+        "types.h": "c",
+        "tracepoint-defs.h": "c",
+        "srcu.h": "c",
+        "orc_types.h": "c",
+        "kobject.h": "c",
+        "printk.h": "c",
+        "ratelimit_types.h": "c",
+        "fs.h": "c"
+    }
+}
