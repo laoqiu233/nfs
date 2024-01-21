@@ -1,2 +1,5 @@
-pb:
-	python -m grpc_tools.protoc -Ilab4_grpc=protos protos/service.proto --python_out=. --grpc_python_out=. --pyi_out=.
+server:
+	uvicorn nfs:app --host 0.0.0.0
+
+install:
+	pip3 install fastapi uvicorn
